@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Nature Landing page</title>
+  </head>
+
+  <body>
+    <section class="container">
+      <nav>
+        <div class="nav__bar">
+          <a href="#" class="nav__logo">
+            <span>NATURE</span>
+          </a>
+          <div class="nav__menu__btn" id="menu-btn">
+            <i class="ri-menu-3-line"></i>
+          </div>
+        </div>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Info</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="container__grid">
+        <div class="container__image">
+          <div></div>
+        </div>
+        <div class="container__content">
+          <h1>Nature is the art of God</h1>
+          <h2>The earth has music for those who listen.</h2>
+          <p>
+            Nature always wears the colors of the spirit. Embark on a journey of
+            a lifetime as you answer the serene and captivating call of nature.
+            Get ready to immerse yourself in the beauty of nature like never
+            before.
+          </p>
+          <div class="socials">
+            <div>
+              <a href="#"><i class="ri-instagram-line"></i></a>
+              <a href="#"><i class="ri-facebook-fill"></i></a>
+              <a href="#"><i class="ri-twitter-fill"></i></a>
+              <a href="#"><i class="ri-whatsapp-line"></i></a>
+            </div>
+            <span>www.nature.com</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const navLinks = document.getElementById("nav-links");
+      const menuBtnIcon = menuBtn.querySelector("i");
+
+      menuBtn.addEventListener("click", (e) => {
+        navLinks.classList.toggle("open");
+
+        const isOpen = navLinks.classList.contains("open");
+        menuBtnIcon.setAttribute(
+          "class",
+          isOpen ? "ri-close-line" : "ri-menu-3-line"
+        );
+      });
+
+      navLinks.addEventListener("click", (e) => {
+        navLinks.classList.remove("open");
+        menuBtnIcon.setAttribute("class", "ri-menu-3-line");
+      });
+
+      const scrollRevealOption = {
+        distance: "50px",
+        origin: "bottom",
+        duration: 1000,
+      };
+
+      // container
+      ScrollReveal().reveal(".container__content h1", {
+        ...scrollRevealOption,
+      });
+      ScrollReveal().reveal(".container__content h2", {
+        ...scrollRevealOption,
+        delay: 500,
+      });
+      ScrollReveal().reveal(".container__content p", {
+        ...scrollRevealOption,
+        delay: 1000,
+      });
+      ScrollReveal().reveal(".socials", {
+        ...scrollRevealOption,
+        delay: 1500,
+      });
+    </script>
+  </body>
+</html>
